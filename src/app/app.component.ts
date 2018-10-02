@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {} from 'bootstrap'
+import { bank } from './models/bank';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,10 @@ import {} from 'bootstrap'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title='تست'
+  title='تست';
+  banks:bank[];
+/**
+ *
+ */
+
 }
