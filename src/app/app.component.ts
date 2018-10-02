@@ -7,4 +7,5 @@ import {} from 'bootstrap'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title='تست'
 }
