@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {} from 'bootstrap'
-import { bank } from './models/bank';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,6 @@ import { bank } from './models/bank';
 })
 export class AppComponent {
   title='تست';
-  banks:bank[];
 /**
  *
  */

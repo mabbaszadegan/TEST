@@ -1,10 +1,23 @@
-<p>
-  bank works!
-</p>
-<div class="grid grid-pad">
-  <a *ngFor="let bank of banks" class="col-1-4">
-    <div class="module hero">
-      <h4>{{bank.BankName}}</h4>
-    </div>
-  </a>
+
+
+<h2>بانک</h2>
+
+<div>
+  <label>عنوان:
+    <input #bankName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(bankName.value); bankName.value=''">
+    افزودن
+  </button>
 </div>
+
+<ul class="banks">
+  <li *ngFor="let bank of banks">
+    <a routerLink="/Bank/{{bank.BankId}}">
+      <span class="badge">{{bank.BankId}}</span> {{bank.BankName}}
+    </a>
+    <button class="حذف" title="حذف بانک"
+      (click)="delete(bank)">x</button>
+  </li>
+</ul>
