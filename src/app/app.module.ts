@@ -3,19 +3,14 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { BankComponent } from './bank/bank.component';
-import { DepartmentComponent } from './department/department.component';
-import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './shared/err404/err404.component'
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    BankComponent,
-    DepartmentComponent,
-    LoginComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

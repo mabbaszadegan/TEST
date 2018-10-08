@@ -1,27 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DepartmentComponent } from './department/department.component';
-import { BankComponent } from './bank/bank.component';
-import { LoginComponent } from './login/login.component';
 
-
+import { PageNotFoundComponent } from './shared/err404/err404.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'department', component: DepartmentComponent },
-  { path: 'bank', component: BankComponent }
+  {
+    path: '',
+    loadChildren: './area/dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'account',
+    loadChildren: './area/account/account.module#AccountModule'
+  },
+  {
+    path: 'bank',
+    loadChildren: './area/admin/bank/bank.module#BankModule'
+  },
+
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    RouterModule.forChild(routes)
-  ],
-  exports:[
-    RouterModule
-  ],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
