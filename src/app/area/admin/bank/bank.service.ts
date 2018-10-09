@@ -16,7 +16,12 @@ export class BankService {
    *
    */
   constructor(private http: HttpClient) {}
+
   getBanks(): Observable<Bank[]> {
     return this.http.get<Bank[]>(banksUrl);
+  }
+
+  addBank(bank: Bank): Observable<Bank> {
+    return this.http.post<Bank>(banksUrl, bank, httpOptions);
   }
 }
