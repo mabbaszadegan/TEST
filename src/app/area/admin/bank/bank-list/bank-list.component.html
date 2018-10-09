@@ -1,3 +1,26 @@
-<ul>
-    <li *ngFor="let bank of banks">{{bank.BankName}}</li>
-</ul>
+<table class="table">
+    <thead >
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" width="80%">عنوان</th>
+            <th scope="col">عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bank of banks; let i=index"> 
+            <td scope="row">
+                {{i+1}}
+            </td>
+            <td>
+                <a routerLink="/bank/detail/{{bank.BankId}}">
+                    <span>{{bank.BankName}} </span>
+                </a>
+            </td>
+            <td>
+                <button type="button" class="close float-left" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
