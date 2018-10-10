@@ -27,6 +27,5 @@ export class BankAddComponent implements OnInit {
     this.bankService.addBank({ BankName: name } as Bank).subscribe(bank => {
       this.banks.push(bank);
     });
-    this.bankService.getBanks();
   }
 }

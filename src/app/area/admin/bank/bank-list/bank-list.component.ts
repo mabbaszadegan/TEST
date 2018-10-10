@@ -11,7 +11,7 @@ import { BankIndexComponent } from "../bank-index/bank-index.component";
 export class BankListComponent implements OnInit {
   @Input()
   banks: Bank[];
-  
+
   constructor(
     private bankService: BankService,
     private a: BankIndexComponent
@@ -25,5 +25,10 @@ export class BankListComponent implements OnInit {
     this.bankService.getBanks().subscribe(bank => {
       this.a.banks = bank;
     });
+  }
+
+  deleteBank(bank: Bank) {
+    this.banks = this.banks.filter(b => b != bank);
+    this.bankService.deleteBank(bank).subscribe();
   }
 }

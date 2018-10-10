@@ -1,3 +1,21 @@
 <h1>صفحه بانک</h1>
-<root-bank-add [(banks)]="banks"></root-bank-add>
+
+<button (click)="showAddSec(content)">تعریف بانک جدید</button>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>
+            <root-bank-add [(banks)]="banks"></root-bank-add>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
 <root-bank-list [(banks)]="banks"></root-bank-list>
